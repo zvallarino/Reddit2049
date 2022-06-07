@@ -8,6 +8,7 @@
   "dependencies": {
     "@apollo/client": "^3.6.6",
     "@heroicons/react": "^1.0.6",
+    "@uiball/loaders": "^1.2.6",
     "graphql": "^16.5.0",
     "javascript-time-ago": "^2.5.4",
     "next": "latest",
@@ -16,7 +17,8 @@
     "react-dom": "18.1.0",
     "react-hook-form": "^7.31.3",
     "react-hot-toast": "^2.2.0",
-    "react-time-ago": "^7.2.1"
+    "react-time-ago": "^7.2.1",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
