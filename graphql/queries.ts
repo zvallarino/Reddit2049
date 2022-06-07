@@ -38,7 +38,7 @@ export const GET_ALL_POSTS = gql`
 
 
 export const GET_ALL_POSTS_BY_TOPIC = gql`
-  query MyQuery($topic: String!: String!) {
+  query MyQuery($topic: String!) {
     getPostListByTopic(topic: $topic) {
       body
       created_at
