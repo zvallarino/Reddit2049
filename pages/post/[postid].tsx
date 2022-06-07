@@ -102,7 +102,7 @@ function PostPage() {
 
       <div className = "-my-5 rounded-b-md border border-t-0 border-gray-300 bg-white py-5 px-10">
         <hr className = 'py-2'/>
-        {comments?.data?.getCommentsByPostId.map((comment)=>
+        {post?.comments.map((comment)=>
         (
           <div 
           className = "relative flex items-center space-x-2 space-y-5"
