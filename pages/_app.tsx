@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps: {session, ...pageProps} }: AppProps) {
       
     <SessionProvider session = {session}>
       <Toaster />
-      <div className = 'h-screen overflow-y-scroll bg-slate-200'> 
+      <div className = 'h-screen overflow-y-scroll bg-slate-200 scrollbar-hide'> 
         <Header />
         <Component {...pageProps} />
       </div>

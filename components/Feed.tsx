@@ -14,11 +14,7 @@ type Props = {
   topic?:string
 }
 
-
 function Feed({topic}: Props) {
-
-  console.log(`this is the ${topic}`)
-
 
   const {data, error} = !topic
   ? useQuery(GET_ALL_POSTS) 
@@ -28,14 +24,10 @@ function Feed({topic}: Props) {
     }
   })
 
-  console.log(data)
-  console.log(error)
-
   const posts: Post[] = !topic ? data?.getPostList : data?.getPostListByTopic
 
-
   return (
-    <div className="mt-5 space-y-4">
+    <div className="mt-5 space-y-4 ">
       {posts?.map(post =>
       <Post key ={post.id} post ={post}/>
       )}

@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 import { 
   BellIcon,
-  
   ChatIcon,
   GlobeIcon,
   PlusIcon, 
@@ -15,6 +14,7 @@ import {
   MenuIcon,
   SearchIcon } from '@heroicons/react/solid'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 
 
@@ -23,12 +23,17 @@ function Header() {
   const { data: session} = useSession();
 
   return (
-    <div className="flex bg-white px-4 py-2 shadow-sm">
+    <div className="sticky top-0 z-50 flex items-center bg-white px-4 py-2 shadow-sm">
       <div className = "relative h-10 w-20 flex-shrink-0 cursor-pointer">
-        <Image 
-        objectFit = "contain"
-        src="https://links.papareact.com/fqy" 
-        layout="fill"/>
+
+    <Link href = "/">
+          <Image 
+          objectFit = "contain"
+          src="https://links.papareact.com/fqy" 
+          layout="fill"
+          />
+    </Link>
+
       </div>
 
       <div className ="mx-7 flex items-center xl:min-w-[300px]">
@@ -61,23 +66,33 @@ function Header() {
       </div>
 
     {session?
-    <div  onClick={()=>signOut()} className = "hidden cursor-pointer items-center space-x-2 border border-gray-100 p-2 lg:flex">
+    <div  onClick={()=>signOut()} 
+    className = "hidden cursor-pointer items-centerspace-x-2 border border-gray-100 p-2 lg:flex"
+    >
+    
     <div className='relative h-5 w-5 flex-shrink-0'> 
       <Image src ="https://links.papareact.com/23l" 
       layout = "fill"
       objectFit = "contain"
-      alt = ""/>
+      alt = ""
+      />
     </div>
+
     <div className = "flex-1 text-xs"> 
       <p className = "truncate">{session?.user?.name}</p>
       <p className = "text-gray-400">818 Karma</p>
     </div> 
-    <ChevronDownIcon className ="h-5 flex-shrink-0 text-gray-400"/> 
+
+    <ChevronDownIcon 
+    className ="h-5 flex-shrink-0 text-gray-400"
+    /> 
     </div>
     : <div onClick={()=>signIn()}
-     className = "hidden cursor-pointer items-center space-x-2 border border-gray-100 p-2 lg:flex">
+     className = "hidden cursor-pointer items-center space-x-2 border border-gray-100 p-2 lg:flex"
+     >
         <div className='relative h-5 w-5 flex-shrink-0'> 
-          <Image src ="https://links.papareact.com/23l" 
+          <Image 
+          src ="https://links.papareact.com/23l" 
           layout = "fill"
           objectFit = "contain"
           alt = ""/>
